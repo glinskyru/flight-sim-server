@@ -19,11 +19,14 @@ type Velocity struct {
 // Player represents a connected player
 type Player struct {
 	ID          string
-	Position    Positionr
+	Position    Position
 	Velocity    Velocity
 	PeerConn    *webrtc.PeerConnection
 	GameUpdates *webrtc.DataChannel
 	UserInput   *webrtc.DataChannel
 	Violations  int // For anti-cheat tracking
 	BanUntil    time.Time
+}
+type Position struct {
+	X, Y, Z float64
 }

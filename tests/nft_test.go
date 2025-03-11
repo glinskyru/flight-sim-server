@@ -34,4 +34,3 @@ func TestTransferNFT(t *testing.T) {
 		t.Errorf("Expected ownership error, got %v", err)
 	}
 }
-r

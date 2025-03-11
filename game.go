@@ -3,28 +3,8 @@ package main
 import (
 	"encoding/json"
 	"log"
-	"sync"
 	"time"
-
-	"github.com/pion/webrtc/v3"
 )
-
-var playersMutex sync.Mutex
-
-type Player struct {
-	ID          string
-	Position    Positionr
-	Velocity    Velocity
-	PeerConn    *webrtc.PeerConnection
-	GameUpdates *webrtc.DataChannel
-	UserInput   *webrtc.DataChannel
-	Violations  int // For anti-cheat tracking
-	BanUntil    time.Time
-}
-
-type Position struct {
-	X, Y, Z float64
-}
 
 func updateGameState() {
 	playersMutex.Lock()
