@@ -14,6 +14,14 @@ func (m *mockDataChannel) Send(data []byte) error {
 	m.sentData = append(m.sentData, data)
 	return nil
 }
+func TestSomething(t *testing.T) {
+	mockChannel := &mockDataChannel{}
+	player := Player{
+		ID:          "123",
+		DataChannel: mockChannel, // Works because *mockDataChannel implements DataChannel
+	}
+	// Test logic here
+}
 
 func TestBroadcastPositions(t *testing.T) {
 	playersMutex.Lock()

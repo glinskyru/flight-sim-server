@@ -6,6 +6,11 @@ import (
 	"time"
 )
 
+type DataChannel interface {
+	Send(data []byte) error
+	// Add other methods you use, e.g., Close() or OnMessage()
+}
+
 func updateGameState() {
 	playersMutex.Lock()
 	defer playersMutex.Unlock()

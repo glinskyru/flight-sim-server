@@ -26,4 +26,5 @@ type Player struct {
 	UserInput   *webrtc.DataChannel
 	Violations  int // For anti-cheat tracking
 	BanUntil    time.Time
+	DataChannel DataChannel // Now accepts any type implementing DataChannel
 }
