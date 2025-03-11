@@ -27,6 +27,3 @@ type Player struct {
 	Violations  int // For anti-cheat tracking
 	BanUntil    time.Time
 }
-type Position struct {
-	X, Y, Z float64
-}
