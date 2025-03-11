@@ -6,8 +6,24 @@ import (
 	"time"
 )
 
+type DataChannel interface {
+	Send(data []byte) error
+	Close() error
+	// Include any other methods your code calls on DataChannel
+}
+
 type mockDataChannel struct {
-	sentData [][]byte
+	// Add fields if needed for mock behavior
+}
+
+func (m *mockDataChannel) Send(data []byte) error {
+	// Mock implementation (e.g., log data or return nil)
+	return nil
+}
+
+func (m *mockDataChannel) Close() error {
+	// Mock implementation
+	return nil
 }
 
 func (m *mockDataChannel) Send(data []byte) error {
@@ -20,6 +36,8 @@ func TestSomething(t *testing.T) {
 		ID:          "123",
 		DataChannel: mockChannel, // Works because *mockDataChannel implements DataChannel
 	}
+	player := Player{ID: "123" /* other fields */}
+	t.Logf("Testing player with ID: %s", player.ID) // Example usage
 	// Test logic here
 }
 
