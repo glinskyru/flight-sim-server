@@ -1,4 +1,4 @@
-package main
+package flight_sim_server
 
 import (
 	"testing"

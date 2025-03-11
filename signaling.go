@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"log"
 	"net/http"
+	"strconv"
 	"sync/atomic"
 
 	"github.com/pion/webrtc/v3"
@@ -13,7 +14,7 @@ var playerIDCounter uint64
 
 func generateUniqueID() string {
 	id := atomic.AddUint64(&playerIDCounter, 1)
-	return "player_" + string(id)
+	return "player_" + strconv.FormatUint(id, 10)
 }
 
 func handleOffer(w http.ResponseWriter, r *http.Request) {
