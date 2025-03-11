@@ -19,7 +19,7 @@ type Velocity struct {
 // Player represents a connected player
 type Player struct {
 	ID          string
-	Position    Position
+	Position    Positionr
 	Velocity    Velocity
 	PeerConn    *webrtc.PeerConnection
 	GameUpdates *webrtc.DataChannel
