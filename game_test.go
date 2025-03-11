@@ -30,10 +30,11 @@ func TestSomething(t *testing.T) {
 	t.Logf("Testing player with ID: %s", player.ID) // Example usage
 	// Test logic here
 	if err != nil {
-        t.Fatalf("Send failed: %v", err)
-    }
-    if string(mockChannel.sentData) != "test" {
-        t.Errorf("Expected sentData to be 'test', got %s", mockChannel.sentData)
+		t.Fatalf("Send failed: %v", err)
+	}
+	if string(mockChannel.sentData) != "test" {
+		t.Errorf("Expected sentData to be 'test', got %s", mockChannel.sentData)
+	}
 }
 
 func TestBroadcastPositions(t *testing.T) {

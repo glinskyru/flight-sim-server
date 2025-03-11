@@ -13,7 +13,7 @@ type DataChannel interface {
 }
 
 type Game struct {
-	dc DataChannel
+	DataChannel DatraChannel
 }
 
 func updateGameState() {
