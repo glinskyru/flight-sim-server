@@ -8,7 +8,12 @@ import (
 
 type DataChannel interface {
 	Send(data []byte) error
-	// Add other methods you use, e.g., Close() or OnMessage()
+	Close() error
+	// Include any other methods your code calls on DataChannel
+}
+
+type Game struct {
+	dc DataChannel
 }
 
 func updateGameState() {

@@ -22,8 +22,8 @@ type Player struct {
 	Position    Position
 	Velocity    Velocity
 	PeerConn    *webrtc.PeerConnection
-	GameUpdates *webrtc.DataChannel
-	UserInput   *webrtc.DataChannel
+	GameUpdates DataChannel
+	UserInput   DataChannel
 	Violations  int // For anti-cheat tracking
 	BanUntil    time.Time
 	DataChannel DataChannel // Now accepts any type implementing DataChannel
